@@ -1,4 +1,9 @@
-import { Ionicons, Entypo, EvilIcons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
+import {
+  Entypo,
+  EvilIcons,
+  MaterialCommunityIcons,
+  FontAwesome5,
+} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -16,34 +21,63 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      initialRouteName='TabOne'
+      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+    >
       <BottomTab.Screen
-        name="Home"
+        name='Home'
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <Entypo name="home" size={30} color={color} style={{ marginBottom: -3 }} />,
+          tabBarIcon: ({ color }) => (
+            <Entypo
+              name='home'
+              size={30}
+              color={color}
+              style={{ marginBottom: -3 }}
+            />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="Search"
+        name='Search'
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <EvilIcons name="search" size={30} color={color} style={{ marginBottom: -3 }} />,
+          tabBarIcon: ({ color }) => (
+            <EvilIcons
+              name='search'
+              size={30}
+              color={color}
+              style={{ marginBottom: -3 }}
+            />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="Your library"
+        name='Your library'
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="library-music-outline" size={30} color={color} style={{ marginBottom: -3 }} />,
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name='library-music-outline'
+              size={30}
+              color={color}
+              style={{ marginBottom: -3 }}
+            />
+          ),
         }}
       />
       <BottomTab.Screen
-        name="Premium"
+        name='Premium'
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <FontAwesome5 name="spotify" size={30} color={color} style={{ marginBottom: -3 }} />,
+          tabBarIcon: ({ color }) => (
+            <FontAwesome5
+              name='spotify'
+              size={30}
+              color={color}
+              style={{ marginBottom: -3 }}
+            />
+          ),
         }}
       />
     </BottomTab.Navigator>
@@ -56,9 +90,9 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="TabOneScreen"
+        name='TabOneScreen'
         component={HomeScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: 'Home' }}
       />
     </TabOneStack.Navigator>
   );
@@ -70,7 +104,7 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
+        name='TabTwoScreen'
         component={TabTwoScreen}
         options={{ headerTitle: 'Tab Two Title' }}
       />

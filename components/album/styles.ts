@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
     text: {
         color: 'grey',
-        'margin-top': 10
+        marginTop: 10
     }
 })
 
