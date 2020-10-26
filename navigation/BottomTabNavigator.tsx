@@ -10,6 +10,7 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import AlbumScreen from '../screens/AlbumScreen';
 import HomeScreen from '../screens/HomeScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
@@ -93,6 +94,11 @@ function TabOneNavigator() {
         name='TabOneScreen'
         component={HomeScreen}
         options={{ headerTitle: 'Home' }}
+      />
+      <TabOneStack.Screen
+        name='AlbumScreen'
+        component={AlbumScreen}
+        options={{ headerTitle: 'Album' }}
       />
     </TabOneStack.Navigator>
   );
