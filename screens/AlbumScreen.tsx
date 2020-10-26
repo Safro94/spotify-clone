@@ -3,6 +3,7 @@ import { View, FlatList } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
 import SongListItem from '../components/songListItem';
+import AlbumHeader from '../components/albumHeader';
 
 const album = {
   id: '11',
@@ -57,6 +58,7 @@ export default () => {
         data={album.songs}
         renderItem={({ item }) => <SongListItem song={item} />}
         keyExtractor={(item) => item.id}
+        ListHeaderComponent={() => <AlbumHeader album={album} />}
       />
     </View>
   );
