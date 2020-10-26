@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
 import SongListItem from '../components/songListItem';
@@ -53,7 +53,11 @@ export default () => {
 
   return (
     <View>
-      <SongListItem song={album.songs[0]} />
+      <FlatList
+        data={album.songs}
+        renderItem={({ item }) => <SongListItem song={item} />}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 };

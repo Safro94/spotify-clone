@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 
     title: {
         color: 'white',
-        fontSize: 24,
+        fontSize: 22,
     },
 
     artist: {

@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, Image } from 'react-native';
-
-import AlbumComponent from '../album';
+import { View, Text, Image } from 'react-native';
 
 import styles from './styles';
 import { Song } from '../../types';
