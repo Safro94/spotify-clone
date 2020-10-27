@@ -4,7 +4,7 @@
   "description": "REST API for the songs",
   "main": "index.js",
   "scripts": {
-    "start": "node src/api/index.js"
+    "start": "nodemon src/api/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "helmet": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

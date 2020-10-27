@@ -1,20 +1,20 @@
-const AlbumsService = require('../../service/albumsService');
+const AlbumsClient = require('../../integration/albumsClient');
 
 const getAlbums = async (req, res) => {
-    const albums = await AlbumsService.get();
-    res.json(albums);
+  const albums = await AlbumsClient.get();
+  res.json(albums);
 };
 
 const getAlbumById = async (req, res) => {
-    const { id } = req.params;
-    const album = await AlbumsService.getById(id);
-    res.json(album);
+  const { id } = req.params;
+  const album = await AlbumsClient.getById(id);
+  res.json(album);
 };
 
 const getAlbumsByCategory = async (req, res) => {
-    const { categoryId } = req.params;
-    const albums = await AlbumsService.getByCategoryId(categoryId);
-    res.json(albums);
+  const { categoryId } = req.params;
+  const albums = await AlbumsClient.getByCategoryId(categoryId);
+  res.json(albums);
 };
 
 module.exports = { getAlbums, getAlbumById, getAlbumsByCategory };

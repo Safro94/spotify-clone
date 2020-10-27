@@ -1,13 +1,13 @@
-const SongsService = require('../../service/songsService');
+const SongsClient = require('../../integration/songsClient');
 
 const getSongs = async (req, res) => {
-  const songs = await SongsService.get();
+  const songs = await SongsClient.get();
   res.json(songs);
 };
 
 const getSongById = async (req, res) => {
   const { id } = req.params;
-  const song = await SongsService.getById(id);
+  const song = await SongsClient.getById(id);
   res.json(song);
 };
 
