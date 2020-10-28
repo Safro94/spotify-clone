@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Text, Image, View, TouchableOpacity } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { Sound } from 'expo-av/build/Audio/Sound';
+import { API_URL } from '@env';
 
 import styles from './styles';
-
-const song = {
-  id: '1',
-  uri: '',
-  imageUri:
-    'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
-  title: 'High on You',
-  artist: 'Helen',
-};
+import axios from '../../utils/axios';
 
 export default () => {
+  const [song, setSong] = useState(null);
   const [sound, setSound] = useState<Sound | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [duration, setDuration] = useState<number | null>(null);
@@ -46,6 +40,19 @@ export default () => {
     }
   }, [song]);
 
+  useEffect(() => {
+    const getSong = () => {
+      axios(`${API_URL}/songs/1`).then(
+        (res) => {
+          setSong(res.data);
+        },
+        (err) => console.log(err)
+      );
+    };
+
+    getSong();
+  }, []);
+
   const onPlayPausePress = async () => {
     if (!sound) {
       return;
@@ -73,24 +80,28 @@ export default () => {
     <View style={styles.container}>
       <View style={[styles.progress, { width: `${getProgress()}%` }]} />
       <View style={styles.row}>
-        <Image source={{ uri: song.imageUri }} style={styles.image} />
-        <View style={styles.rightContainer}>
-          <View style={styles.nameContainer}>
-            <Text style={styles.title}>{song.title}</Text>
-            <Text style={styles.artist}>{song.artist}</Text>
-          </View>
+        {song && (
+          <>
+            <Image source={{ uri: song.imageUri }} style={styles.image} />
+            <View style={styles.rightContainer}>
+              <View style={styles.nameContainer}>
+                <Text style={styles.title}>{song.title}</Text>
+                <Text style={styles.artist}>{song.artist}</Text>
+              </View>
 
-          <View style={styles.iconsContainer}>
-            <AntDesign name='hearto' size={30} color={'white'} />
-            <TouchableOpacity onPress={onPlayPausePress}>
-              <FontAwesome
-                name={isPlaying ? 'pause' : 'play'}
-                size={30}
-                color={'white'}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
+              <View style={styles.iconsContainer}>
+                <AntDesign name='hearto' size={30} color={'white'} />
+                <TouchableOpacity onPress={onPlayPausePress}>
+                  <FontAwesome
+                    name={isPlaying ? 'pause' : 'play'}
+                    size={30}
+                    color={'white'}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+          </>
+        )}
       </View>
     </View>
   );

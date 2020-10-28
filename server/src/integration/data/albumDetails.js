@@ -9,7 +9,7 @@ module.exports = {
   songs: [
     {
       id: '1',
-      uri: 'https://youtu.be/GXFSK0ogeg4',
+      uri: `${process.env.URL}/audio/turn-around.mp3`,
       imageUri:
         'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
       title: 'High on You',
@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       id: '2',
-      uri: 'https://youtu.be/GXFSK0ogeg4',
+      uri: `${process.env.URL}/audio/turn-around.mp3`,
       imageUri:
         'https://cdn6.f-cdn.com/contestentries/1485199/27006121/5ca3e39ced7f1_thumb900.jpg',
       title: 'Lorem Ipsum',
@@ -25,7 +25,7 @@ module.exports = {
     },
     {
       id: '3',
-      uri: 'https://youtu.be/GXFSK0ogeg4',
+      uri: `${process.env.URL}/audio/turn-around.mp3`,
       imageUri:
         'https://images-na.ssl-images-amazon.com/images/I/61F66QURFyL.jpg',
       title: 'Hello from the other side',
@@ -33,7 +33,7 @@ module.exports = {
     },
     {
       id: '4',
-      uri: 'https://youtu.be/GXFSK0ogeg4',
+      uri: `${process.env.URL}/audio/turn-around.mp3`,
       imageUri:
         'https://cache.boston.com/resize/bonzai-fba/Globe_Photo/2011/04/14/1302796985_4480/539w.jpg',
       title: 'High on You',
