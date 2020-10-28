@@ -39,48 +39,6 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
-      <BottomTab.Screen
-        name='Search'
-        component={TabTwoNavigator}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <EvilIcons
-              name='search'
-              size={30}
-              color={color}
-              style={{ marginBottom: -3 }}
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name='Your library'
-        component={TabTwoNavigator}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons
-              name='library-music-outline'
-              size={30}
-              color={color}
-              style={{ marginBottom: -3 }}
-            />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name='Premium'
-        component={TabTwoNavigator}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome5
-              name='spotify'
-              size={30}
-              color={color}
-              style={{ marginBottom: -3 }}
-            />
-          ),
-        }}
-      />
     </BottomTab.Navigator>
   );
 }
