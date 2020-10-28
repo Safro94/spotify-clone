@@ -1,7 +1,7 @@
 # Spotify Clone
 
 ## Descripción
-This is a simple project to test Expo and React Native w/Typescript. There's also a REST API with Node Js and mock data to feed the client.
+Spotify clone with a home page and the album list functionality. This is a simple project to test out Expo and React Native w/Typescript. There's also a REST API with Node Js and mock data to feed the client.
 
 ## Stack
 
